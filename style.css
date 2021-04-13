@@ -1,0 +1,106 @@
+:after, :before { box-sizing: border-box; }
+
+body {
+    font-family: Source sans pro;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 800px;
+    background-image: url(images/cover-image.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    margin: 30px 50px;
+}
+
+.menu__menu-item {
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    font-weight: 700;
+}
+
+/*citát*/
+.quote {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote__content {
+    text-align: center;
+    font-size: 20px;
+}
+
+.quote__content--bold {
+    font-weight: bold;
+}
+
+/*O mně*/
+.about {
+    display: flex;
+    height: 400px;
+}
+
+
+.about__text {
+    background: gainsboro;
+    padding: 100px 50px;
+    font-size: 20px;
+    width: 70%;
+}
+
+/*kontakt*/
+.contact {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    align-items: center;
+}
+
+.contact__name {
+    font-family: Neuton;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 60px;
+}
+
+.contact__phone,
+.contact__email,
+.contact__facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact__phone--logo-phone,
+.contact__email--logo-email,
+.contact__facebook--logo-facebook {
+width: 25px;
+margin: 5px;
+}
+
+
+.contact__email--content a,
+.contact__facebook--content a{
+    text-decoration: none;
+    color: black;
+}
+
+.contact__email--content a:hover,
+.contact__facebook--content a:hover {
+    color:gainsboro;
+}

@@ -2,14 +2,28 @@
 
 body {
     font-family: Source sans pro;
-    display: flex;
-    flex-direction: column;
+}
+
+h1 {
+    font-family: Neuton;
+    font-size: 2rem
+}
+
+h2 {
+    color:rgb(255, 255, 255);
+    font-size: 1.5em;
+}
+
+.nadpis,
+.portfolio__nazev-projektu {
+    text-align: center;
 }
 
 .header {
     height: 800px;
     background-image: url(images/cover-image.jpg);
     background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: flex-end;
 }
@@ -41,7 +55,7 @@ body {
 
 .quote__content {
     text-align: center;
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .quote__content--bold {
@@ -50,17 +64,93 @@ body {
 
 /*O mně*/
 .about {
-    display: flex;
-    height: 400px;
+    display: grid;
+    grid-template-columns: minmax(20%, 30%) 1fr;
+    width: 100%;
 }
 
+.about__photo {
+    width: 200%;
+    object-fit: cover;
+    object-position: -100px 0;
+    max-height: 400px;
+}
 
 .about__text {
-    background: gainsboro;
-    padding: 100px 50px;
-    font-size: 20px;
-    width: 70%;
+    background: rgb(221, 221, 221);
+    padding: 5em 3em;
+    font-size: 1em;  
 }
+
+.about__text a {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.about__text a:hover {
+    color:rgb(109, 109, 109);
+}
+
+/*portfolio*/
+
+.portfolio {
+    width: 100%;
+}
+
+.portfolio__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    background-color: rgb(255, 255, 255);
+}
+
+.portfolio__left,
+.portfolio__right {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    gap: 1em;
+    padding: 1em;
+    justify-items: center;
+}
+
+.portfolio__nazev-projektu,
+.portfolio__odkaz {
+    grid-column: 1/5;
+    align-self: center;
+}
+
+.portfolio__odkaz {
+    color: rgb(255, 255, 255);
+}
+
+.portfolio__odkaz a:hover {
+    color: rgb(109, 109, 109)
+}
+
+.portfolio__item {
+  width: 100%;
+  max-height: 300px;
+}
+
+.popelnik_desktop1 {
+    grid-column:1/3;
+}
+
+.popelnik_desktop2 {
+    grid-column: 3/5;
+}
+
+.janka1 {
+    grid-column: 1/3;
+}
+
+.janka2 {
+    grid-column: 3/5;
+}
+
 
 /*kontakt*/
 .contact {
@@ -72,7 +162,7 @@ body {
 
 .contact__name {
     font-family: Neuton;
-    font-size: 40px;
+    font-size: 1em;
     font-weight: 500;
     margin: 60px;
 }
@@ -85,7 +175,6 @@ body {
     align-items: center;
 }
 
-
 .contact__phone--logo-phone,
 .contact__email--logo-email,
 .contact__facebook--logo-facebook {
@@ -93,14 +182,73 @@ width: 25px;
 margin: 5px;
 }
 
-
 .contact__email--content a,
 .contact__facebook--content a{
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 .contact__email--content a:hover,
 .contact__facebook--content a:hover {
-    color:gainsboro;
+    color:rgb(230, 230, 230);
 }
+
+@media screen and (max-width: 800px){
+    .portfolio__container {
+    grid-template-columns: 1fr;
+    gap: 1em;
+    }
+
+    .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
+    .about__photo {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        max-height: 400px;
+    }
+    
+    .about__text {
+        background: rgb(221, 221, 221);
+        padding: 5em 3em;
+        font-size: 0.9em;  
+    }
+}
+
+@media screen and (max-width: 500px){
+    .portfolio__left,
+    .portfolio__right {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0;
+    }
+
+    .portfolio__item {
+        width: 100%;
+        max-height: 800px;
+        grid-column: 1/2;
+        padding: 1em 0;
+    }
+
+    .popelnik_desktop1,
+    .popelnik_desktop2,
+    .janka1,
+    .janka2 {
+        grid-column: 1/2;
+    }
+
+    .popelnik_mobil2,
+    .popelnik_mobil3,
+    .popelnik_mobil4,
+    .janka-mobil2,
+    .janka-mobil3,
+    .janka-mobil4 {
+        display: none;
+    }
+}
+

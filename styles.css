@@ -28,11 +28,58 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
+.header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.header__logo {
+  /* width: 3.5em;*/
+  margin: 30px 30px;
+}
+
+.header__arrow {
+  width: 50px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/*  
+#lotos {
+    stroke-dasharray: 59;
+    stroke-dashoffset: 59;
+    animation: draw 3s ease-in-out forwards;
+}
+
+@keyframes draw{
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+*/
 .menu {
   list-style: none;
   display: -webkit-box;

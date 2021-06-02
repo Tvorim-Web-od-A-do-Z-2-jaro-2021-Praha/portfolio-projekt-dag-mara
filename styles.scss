@@ -47,8 +47,26 @@ h2 {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__logo {
+        margin: 30px 30px;
+    }
+    &__arrow {
+        width: 50px;
+        align-self: center;
+
+    }
 }
+
 
 .menu {
     list-style: none;
@@ -62,9 +80,8 @@ h2 {
         &:hover {
             font-weight: 700;
         }
-    }
+    }   
 }
-
 
 /*citát*/
 .quote {
@@ -140,7 +157,6 @@ h2 {
         width: 100%;
         max-height: 300px;
     }
-
 }
 
 .popelnik_desktop1 {

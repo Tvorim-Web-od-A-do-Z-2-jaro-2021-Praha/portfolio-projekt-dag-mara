@@ -63,27 +63,123 @@ h2 {
     &__arrow {
         width: 50px;
         align-self: center;
-
     }
 }
 
+//hamburger menu
 
-.menu {
-    list-style: none;
-    display: flex;
-    width: 300px;
-    justify-content: space-between;
-    margin: 30px 50px;
-    &__menu-item {
-        text-decoration: none;
-        color: white;
-        &:hover {
-            font-weight: 700;
-        }
-    }   
+#menuToggle
+{
+  display: block;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 100;
+  transition: top 0.3s;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-/*citát*/
+#menuToggle a
+{
+  text-decoration: none;
+  font-size: 1rem;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2; 
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  border-radius: 30%;
+  margin-bottom: 5px;
+  position: relative;
+  background: #000000;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+    opacity: 85%;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+//citát
 .quote {
     height: 300px;
     display: flex;
@@ -98,7 +194,7 @@ h2 {
     }
 }
 
-/*O mně*/
+//O mně
 .about {
     display: grid;
     grid-template-columns: minmax(20%, 30%) 1fr;
@@ -123,7 +219,7 @@ h2 {
     }
 }
 
-/*portfolio*/
+//portfolio
 
 .nadpis {
     margin: 5rem 0 2rem 0;
@@ -176,7 +272,7 @@ h2 {
 }
 
 
-/*kontakt*/
+//kontakt
 .contact {
     display: flex;
     flex-direction: column;
@@ -210,6 +306,7 @@ h2 {
     &__facebook--content a:hover {
         color:$barvaHover;
     }
+
 }
 
 @media screen and (max-width: 800px){
@@ -237,6 +334,13 @@ h2 {
 }
 
 @media screen and (max-width: 500px){
+    #menuToggle {
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    }
+
     .portfolio__left,
     .portfolio__right {
         display: grid;
